@@ -1,0 +1,49 @@
+
+{form name='settings-form'}
+<table>
+    <tr class="{cycle values='ow_alt1, ow_alt2'}">
+        <td class="ow_label">{label name='newLogin'}</td>
+        <td class="ow_value">
+            {input name='newLogin'} {error name='newLogin'}
+        </td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+                {foreach from=$questions item='question' name='question'}
+                    <tr class=" {if empty($section)}ow_tr_first{/if} {if $smarty.foreach.question.last && $question.name!='password'}ow_tr_last{/if}">
+                        <td class="{if !empty($question.trClass)}{$question.trClass}{/if} ow_label">
+                            {label name=$question.name}
+                        </td>
+                        <td class="{if !empty($question.trClass)}{$question.trClass}{/if} ow_value">
+                            {input name=$question.name}
+                            <div style="height:1px;"></div>
+                            {error name=$question.name}
+                        </td>
+                        <td class="{if !empty($question.trClass)}{$question.trClass}{/if} ow_desc">
+                            {question_description_lang name=$question.name}
+                        </td>
+                    </tr>
+                    {if $question.name=='password'}
+                        <tr class="{if $smarty.foreach.question.last}ow_tr_last{/if}">
+                            <td class="{if !empty($question.trClass) && $question.trClass == 'ow_alt1'}ow_alt2{else}ow_alt1{/if} ow_label">
+                                {label name='repeatPassword'}
+                            </td>
+                            <td class="{if !empty($question.trClass) && $question.trClass == 'ow_alt1'}ow_alt2{else}ow_alt1{/if} ow_value">
+                                {input name='repeatPassword'}
+                                <div style="height:1px;"></div>
+                                {error name='repeatPassword'}
+                            </td>
+                            <td class="{if !empty($question.trClass) && $question.trClass == 'ow_alt1'}ow_alt2{else}ow_alt1{/if} ow_desc">
+                                {question_description_lang name='repeatPassword'}
+                            </td>
+                        </tr>
+                    {/if}
+                {/foreach}
+                </table>
+
+<div class="clearfix">
+            <div class="ow_center">               
+            {submit name="reg_fake" class="ow_right"}
+            </div>           
+      </div>
+
+{/form}

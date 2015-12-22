@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<name>Female reg only men</name>
+	<key>femaleregonlymen</key>
+	<description>The plugin includes Custom Female profile registration form for Admin.  It also hides same sex profiles from Photo and Profile lists</description>
+    <author>Skalfa LLC</author>
+    <authorEmail>oxwall@skalfa.com</authorEmail>
+	<authorUrl>http://www.skalfa.com</authorUrl>
+	<developerKey>e547ebcf734341ec11911209d93a1054</developerKey>
+    <build>1</build>
+    <copyright>(C) 2009 Skalfa LLC. All rights reserved.</copyright>
+    <license>OSCL</license>
+    <licenseUrl>http://www.oxwall.org/store/oscl</licenseUrl>
+</plugin>
+
+
+	
